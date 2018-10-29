@@ -1,0 +1,46 @@
+
+body .jumbotron{
+    margin-top: 0px;
+    height: 150px;
+    padding-top: 0px;
+}
+.jumbotronHeading{
+    margin: 4px;
+    width: 67%;
+}
+body .jumbotron .container{
+    padding-top: 0px;
+}
+.thumbnail .image{
+    height: 200px;
+    width: 100%;
+    max-width: 400px;
+}
+.thumbnail .caption{
+    text-align: center;
+    font-weight: 900;
+}
+.btn{
+    outline: none;
+}
+.discription{  
+    margin: 2px auto;
+}
+.container .row .thumbnail{
+    padding: 0;
+    box-shadow: 2px 2px 40px 1px rgba(26, 25, 25, 0.4);
+}
+.container .row .thumbnail:hover{
+    box-shadow: 2px 2px 50px 2px rgba(26, 25, 25, 0.6);
+}
+body .success{
+    padding: 0;
+    margin: 0;
+}
+body .success .alert{
+    margin: 0;
+}
+body .kampingHome{
+    padding-top: 3.4%;
+}
+

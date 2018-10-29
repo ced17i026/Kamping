@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Info About Kamp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAZHutX56b68Q2e9yxGHneaINPpJrPFjinPZD5ogXHfvQ2XGDw">
+        <!--jquery is here-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!--semantic ui is here-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css">
+        <!--semantic javascript is here-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.js"></script>
+        <link rel= "stylesheet" href="/kampinfo.css">
+    </head>
+    <body>
+        <%include partials/navbar.ejs%>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <p class="lead">Kamping</p>
+                    <div class="list-group">
+                        <div class="list-group-item active">INFO 1</div>
+                        <div class="list-group-item">INFO 2</div>
+                        <div class="list-group-item">INFO 3</div>
+                    </div>
+                    <div class="commentText">
+                        <form class="ui form" method="post" action="/kamp/<%=data['_id']%>/comment">
+                            <div class="field">
+                                <label for="comment">Post your Comment</label>
+                                <textarea name = "kamp[comment]" id="comment" rows="3" placeholder="Add your comment here"></textarea>
+                                <button class="ui button">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8">
+                    <div class="imageBody">
+                        <div class="thumbnail">
+                            <img class="img-responsive" src="<%=data['image']%>">
+                            <div class="caption">
+                                <h4 class="pull-right">$9.00/Night</h4>
+                                <h3><%=data['title']%></h3>
+                                <em>Created By <%=data['author']%></em><br>
+                                <strong>About The Kamp</strong><br>
+                                <%=data['discription']%><br>
+                                <%if(currentUser && data['authorId'].equals(currentUser._id)){%>
+                                    <a class="btn btn-warning" href="/kamp/<%=data['_id']%>/edit">Edit</a>
+                                    <form action="/kamp/<%=data['_id']%>/remove?_method=DELETE" method="post" class="deleteKamp">
+                                        <button class="btn btn-danger">Delete Kamp</button>
+                                    </form>
+                                <%}%>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h1>Comments</h1>
+                    <%if(currentUser){%>
+                        <button class="pull-right ui big green button commentButton">Add your Comment</button><br><br>
+                    <%}%>
+                    <div class="others">
+                        <div class="commentBody">
+                            <%data.comments.forEach(function(comment){%>
+                                <div><strong><%=comment['author']%></strong> - <%-comment["comment"]%><br>
+                                    <%if(currentUser && comment.authorId.equals(currentUser._id)){%>
+                                    <form method="get" action="/kamp/<%=data['_id']%>/comment/<%=comment['_id']%>/edit">
+                                        <button class="btn btn-warning btn-xs">Edit</button>
+                                    </form>
+                                    <form method="post" action="/kamp/<%=data['_id']%>/comment/<%=comment['_id']%>/edit?_method=DELETE">
+                                        <button class="btn btn-danger btn-xs">Delete</button>
+                                    </form>
+                                <%}%>
+                                </div>
+                            <%})%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>          
+        <script src="/editkamp.js"></script>
+    </body>
+</html>

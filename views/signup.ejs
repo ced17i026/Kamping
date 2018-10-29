@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAZHutX56b68Q2e9yxGHneaINPpJrPFjinPZD5ogXHfvQ2XGDw">
+        <!--jquery is here-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!--semantic ui is here-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css">
+        <!--semantic javascript is here-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.js"></script>
+        <!--this is external stylesheet-->
+        <link rel= "stylesheet" href="../signup.css">
+    </head>
+    <body>
+        <% include partials/navbar.ejs%>
+        <div class="container">
+            <div class="container col-xs-12 formBody">
+                <form class="ui form" action="/kamping/signup" method="post">
+                    <h2 class="ui dividing huge header">Sign Up</h2>
+                    <div class="field">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Full Name">
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" name="username" placeholder="Email">
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="password">
+                    </div>
+                    <button class="ui big button">Submit</button>
+                </form>
+            </div>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Your Kamp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAZHutX56b68Q2e9yxGHneaINPpJrPFjinPZD5ogXHfvQ2XGDw">
+        <!--jquery is here-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!--semantic ui is here-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css">
+        <!--semantic javascript is here-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.js"></script>
+        <!--this is external stylesheet-->
+        <link rel= "stylesheet" href="/editkamp.css">
+    </head>
+    <body>
+        <% include partials/navbar.ejs%>
+        <div class="container">
+            <div class="col-xs-12 col-sm-10 col-md-9 editkamp">
+                <h2>Update Your Kamp</h2>
+                <form class="ui form" action="/kamp/<%=kamp['_id']%>/edit" method="post">
+                    <div class="field">
+                        <label>Title</label>
+                        <input type="text" value="<%=kamp['title']%>" name="kamp[title]" class="form-control">
+                    </div>
+                    <div class="field">
+                        <label>Image URL</label>
+                        <input type="text" value="<%=kamp['image']%>" name="kamp[image]" class="form-control">
+                    </div>
+                    <div class="field">
+                        <label>Discription</label>
+                        <input type="text" value="<%=kamp['discription']%>" name="kamp[discription]" class="form-control">
+                    </div>
+                    <button class="ui big yellow button">Update</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+.imageBody .thumbnail img{
+    height: 500px;
+    width: 100%;
+}
+.imageBody .thumbnail{
+    padding: 0px;
+    margin-top: 20px;
+}
+.others{
+    border-bottom: 0.5px solid gray;
+    border-right: 0.5px solid gray;
+    box-shadow: 0.1px 0.1px .1px 0.1px rgba(147, 151, 151, 0.1);
+    margin-bottom: 15px;
+    height: 250px;
+    overflow: auto;
+}
+.field{
+    font-size: 2em;
+}
+.ui .button{
+    font-size: 15px;
+    margin-top: 4px;
+    outline: none;
+}
+.deleteKamp{
+    display: inline;
+}
+form{
+    display: inline;
+}
+.thumbnail .caption h3{
+    margin-bottom: 0;
+}
+.btn-warning{
+    outline: none;
+}

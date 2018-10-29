@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Your Kamp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAZHutX56b68Q2e9yxGHneaINPpJrPFjinPZD5ogXHfvQ2XGDw">
+        <!--jquery is here-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!--semantic ui is here-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css">
+        <!--semantic javascript is here-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.js"></script>
+        <!--this is external stylesheet-->
+        <link rel= "stylesheet" href="/editComment.css">
+    </head>
+    <body>
+        <% include partials/navbar.ejs%>
+        <div class="container">
+            <div class="updateComment">
+                <h1 class="ui huge header">Update Your Comment</h1>
+                <form class="ui big form" method="post" action="/kamp/<%=kampId%>/comment/<%=comment['_id']%>/edit">
+                    <div class="field">
+                        <label>New Comment</label>
+                        <input type="text" value="<%=comment['comment']%>" name="updatedComment">
+                        <button class="ui big green button">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

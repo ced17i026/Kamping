@@ -1,0 +1,11 @@
+
+.ui .button{
+    font-size: 15px;
+}
+body .container{
+    margin: 10px auto;
+    max-width: 500px;
+}
+.field{
+    font-size: 2em;
+}

@@ -1,0 +1,25 @@
+/* the editkamp css is here
+<div class="buttonBody">
+    <form>
+        <button class="button">Edit</button>
+    </form>
+    <form action="/kamp/<%=data['_id']%>?_method=DELETE" method="POST">
+        <button class="button">Delete</button>
+    </form>
+    <!-- action="/kamp/<%=data['_id']%>/comment" method="POST" -->
+    <div>
+        <button class="button commentButton">Comment</button>
+    </div>
+    <form action="/kamp/<%=data['_id']%>/comment" method="POST" class="commentText">
+        <textarea name="kamp[comment]" rows="4" placeholder="post your commnet here" class="form-control"></textarea><br>
+        <button class="btn btn-primary btn-md">submit</button>
+    </form>
+</div>
+<h1>Comments</h1>
+<div class="commentBody">
+    <%data["comments"].forEach(function(comment){%>
+        <p><strong><%=comment["author"]%></strong> - <%=comment["comment"]%></p>
+    <% })%>
+</div>
+
+the editkamp css ends here*/
